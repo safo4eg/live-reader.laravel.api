@@ -23,7 +23,7 @@ return [
     'alpha_num' => 'The :attribute must only contain letters and numbers.',
     'array' => 'The :attribute must be an array.',
     'ascii' => 'The :attribute must only contain single-byte alphanumeric characters and symbols.',
-    'before' => 'The :attribute must be a date before :date.',
+    'before' => ':attribute не должна превышать :date.',
     'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
     'between' => [
         'array' => 'The :attribute must have between :min and :max items.',
@@ -36,7 +36,7 @@ return [
     'current_password' => 'The password is incorrect.',
     'date' => 'The :attribute is not a valid date.',
     'date_equals' => 'The :attribute must be a date equal to :date.',
-    'date_format' => 'The :attribute does not match the format :format.',
+    'date_format' => 'Формат поля (:attribute) должен иметь вид :format.',
     'decimal' => 'The :attribute must have :decimal decimal places.',
     'declined' => 'The :attribute must be declined.',
     'declined_if' => 'The :attribute must be declined when :other is :value.',
