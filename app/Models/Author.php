@@ -10,4 +10,9 @@ class Author extends Model
     use HasFactory;
     public $timestamps = false;
     protected $guarded = [];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }
