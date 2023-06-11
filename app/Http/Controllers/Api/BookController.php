@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Book\BookStoreRequest;
+use App\Http\Requests\Book\BookUpdateRequests;
 use App\Http\Resources\BookResource;
 use App\Models\Book;
-use App\Http\Requests\BookStoreRequest;
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BookController extends Controller
 {
@@ -17,21 +18,24 @@ class BookController extends Controller
 
     public function store(BookStoreRequest $request)
     {
-        $paylaod = $request->safe()->all();
+        $book = Book::create($request->safe()->all());
+        return new BookResource($book);
     }
 
-    public function show($id)
+    public function show(Book $book)
     {
-        return 'show';
+        return new BookResource($book);
     }
 
-    public function update(Request $request, $id)
+    public function update(BookUpdateRequests $request, Book $book)
     {
-        //
+        $book->update($request->safe()->all());
+        return new BookResource($book);
     }
 
-    public function destroy($id)
+    public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return response(null, Response::HTTP_NO_CONTENT );
     }
 }
