@@ -144,7 +144,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values.',
     'string' => 'Поле :attribute должно быть строкой',
     'timezone' => 'The :attribute must be a valid timezone.',
-    'unique' => 'The :attribute has already been taken.',
+    'unique' => 'Значение поля :attribute должно быть уникальным.',
     'uploaded' => 'The :attribute failed to upload.',
     'uppercase' => 'The :attribute must be uppercase.',
     'url' => 'The :attribute must be a valid URL.',
