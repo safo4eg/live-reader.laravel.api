@@ -12,19 +12,29 @@ class Book extends Model
 
     protected $guarded = [];
 
-    protected $casts = [
-        'date_of_writing' => 'datetime:Y-m-d',
-        'date_of_publication' => 'datetime:Y-m-d'
-    ];
+//    protected $casts = [
+//        'date_of_writing' => 'datetime:Y-m-d',
+//        'date_of_publication' => 'datetime:Y-m-d',
+//    ];
 
     protected $with = ['genre', 'author'];
 
-    protected $hidden = [
-        'genre_id',
-        'author_id',
-        'created_at',
-        'updated_at'
-    ];
+//    protected $hidden = [
+//        'genre_id',
+//        'author_id',
+//        'created_at',
+//        'updated_at'
+//    ];
+
+    public function getDateOfWritingAttribute($value)
+    {
+        return (new Carbon($value))->format('Y-m-d');
+    }
+
+    public function getDateOfPublicationAttribute($value)
+    {
+        return (new Carbon($value))->format('Y-m-d');
+    }
 
     public function genre()
     {
